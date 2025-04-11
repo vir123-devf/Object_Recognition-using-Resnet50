@@ -1,37 +1,33 @@
 
-# 🧠 Object Recognition using ResNet50
+# 🧠 Object Recognition using ResNet50 on CIFAR-10
 
-This project leverages the powerful **ResNet50** deep learning architecture to recognize and classify objects in images. It uses **transfer learning** to apply a pre-trained model to new image inputs, enabling high-accuracy predictions with minimal training time.
+This project utilizes the **ResNet50** architecture with **transfer learning** to classify images from the **CIFAR-10** dataset. CIFAR-10 contains 60,000 color images across 10 object categories such as airplanes, cats, dogs, ships, etc.
 
 ## 🔍 Key Features
 
-- Uses **ResNet50** (pre-trained on ImageNet) for object classification  
-- Efficient **transfer learning** setup using TensorFlow/Keras  
-- Input preprocessing and prediction with softmax output  
-- Recognizes a wide variety of real-world objects from input images  
-- Visual display of prediction confidence  
+- Transfer learning using **ResNet50** (pretrained on ImageNet)  
+- Fine-tuned on **CIFAR-10** dataset for multi-class classification  
+- Preprocessing, training, and evaluation handled via Keras  
+- Model achieves strong accuracy on validation/test sets  
+- Visualizes predictions and training history
+
+## 📁 Dataset: CIFAR-10
+
+- **Classes**: Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck  
+- **Image Shape**: 32×32 pixels, 3 color channels  
+- **Source**: Available via `keras.datasets.cifar10`
+
+```python
+from tensorflow.keras.datasets import cifar10
+```
 
 ## 🧠 Tech Stack
 
 - Python  
 - TensorFlow / Keras  
 - NumPy  
-- Matplotlib 
+- Matplotlib  
 - Jupyter Notebook / Google Colab  
-
-## 🖼️ How It Works
-
-1. Load the **ResNet50** model with ImageNet weights  
-2. Preprocess user-uploaded image(s)  
-3. Run the image through the model  
-4. Decode and display the **top predicted class and confidence score**  
-
-
-```
-
-📷 Sample output:
-- Predicted: `golden retriever (n02099601)`  
-- Confidence: `96.23%`
 
 ## ⚙️ Installation
 
@@ -40,11 +36,20 @@ git clone https://github.com/vir123-devf/object-recognition-resnet50.git
 cd object-recognition-resnet50
 jupyter notebook Object_Recogition_using_Resnet50.ipynb
 ```
+
+## 🧪 Model Info
+
+- **Base Model**: ResNet50 (pretrained on ImageNet, fine-tuned on CIFAR-10)  
+- **Final Layers**: Dense + Softmax (10 output units for 10 classes)  
+- **Loss Function**: Categorical Crossentropy  
+- **Optimizer**: optimiziers
+
 ## 📄 License
 
 Licensed under the **MIT License**
 
 ## 🤝 Contributing
 
-Contributions welcome! Submit a pull request or open an issue to improve the project.
+Pull requests and contributions are welcome!
+
 ---
